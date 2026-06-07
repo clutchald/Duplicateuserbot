@@ -5,8 +5,8 @@ from pyrogram.types import Message
 from motor.motor_asyncio import AsyncIOMotorClient
 from DA_Koyeb.health import emit_positive_health
 
-API_ID = int(os.environ.get("API_ID", ""))
-API_HASH = os.environ.get("API_HASH", "")
+API_ID = int(os.environ.get("API_ID", "20342933"))
+API_HASH = os.environ.get("API_HASH", "9233e5deebe6abfc9ba297a9678851be")
 MONGO_URI = os.environ.get("MONGO_URI", "mongodb+srv://RAJ:RAJ@outlook.itqomxm.mongodb.net/?appName=outlook")
 SESSION_NAME = os.environ.get("SESSION_NAME", "userbot")
 
