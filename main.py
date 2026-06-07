@@ -38,9 +38,10 @@ async def delete_worker(client: Client):
             await asyncio.sleep(2)
 
 app = Client(
-    SESSION_STRING, 
-    api_id=int(API_ID) if API_ID else 0, 
-    api_hash=API_HASH
+    "userbot",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    session_string=SESSION_STRING
 )
 
 def get_media_unique_id(message: Message):
