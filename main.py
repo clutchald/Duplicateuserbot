@@ -35,7 +35,7 @@ async def delete_worker(client: Client):
             pass
         finally:
             delete_queue.task_done()
-            await asyncio.sleep(2)
+            await asyncio.sleep(0.50)
 
 app = Client(
     "userbot",
