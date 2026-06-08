@@ -12,7 +12,7 @@ from DA_Koyeb.health import emit_positive_health
 API_ID = int(os.environ.get("API_ID", "20342933"))
 API_HASH = os.environ.get("API_HASH", "9233e5deebe6abfc9ba297a9678851be")
 MONGO_URI = os.environ.get("MONGO_URI", "mongodb+srv://RAJ:RAJ@outlook.itqomxm.mongodb.net/?appName=outlook")
-SESSION_STRING = os.environ.get("SESSION_STRING", "BQFRwgAArMER9MTPuJo66dzdLGYNjxBk2OC-qrPpEgHcnSE7XazoBzwN2PCeXJALh-td4hMvMjrcyhLPbniNkaMTicj5z3NzoCl-1ocTG2aLKw7mzqHVo_gsIReSyD-SW3gdnjIY8VLIULISdz13RsdICSFZaYwvjWKOTQKTEg9b-d40n4qTLtEgi5cfSh3YPZW3rLBxMGr4MGE2yCbhgiUs8XS6Nz0rFcukb7wRfZ4OVj15hPPo5nePbiwXpkyqqudfA0t4abQgtn7_mDX-jm3JAxGA9Rxune-kcwjuUXrV_jWNh1IRFKP94LbPtKiBj7E5ikbOxj8Lf7qt6gs3bLOKO21ihAAAAAH1u3FYAA")
+SESSION_STRING = os.environ.get("SESSION_STRING", "BQFRwgAAti2XP4MxYHxN5fjRVxMBN3fPBecq86ZFe8Jl2dg0r_v0rs3cuGeNT7DmVQMhxcedSBmmxbglr7CG-wrRRC1Ai6kLraEXV_EKw5SooP2oyJj9YrkCw_njNK7AwThj4xr3zTjb8S4s9WY0BmZsTfQOvPfGp_bCPw3ws6h0sRh8wvTpZ-0g127Ke6GVCmskJ0oNISNHzkBNdPfpdsUF50Fx8OE3dhcuenSDU_tyBwYTLx-IexdG2dTfv32c0duGdUJu6u29IuZMnhHPfxya4rK65eCnLpqnTFs02TKYQ1UFGp5Y3LVPwVfMrpZjoHGvDbo1QggWTkIPvDE9dJkQLXdemQAAAAH1u3FYAA")
 
 mongo_client = AsyncIOMotorClient(MONGO_URI)
 db = mongo_client["RojUserBot"]
