@@ -1,4 +1,5 @@
 pyrogram
 tgcrypto
 motor
+dnspython
 koyeb
