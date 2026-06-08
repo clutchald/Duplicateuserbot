@@ -19,23 +19,27 @@ db = mongo_client["RojUserBot"]
 media_collection = db["media_files"]
 
 async def setup_database():
-await media_collection.create_index(
-[("file_unique_id", 1), ("chat_id", 1)],
-unique=True
-)
+    await media_collection.create_index(
+        [("file_unique_id", 1), ("chat_id", 1)],
+        unique=True
+    )
 
 delete_queue = asyncio.Queue()
 
 async def delete_worker(client: Client):
-while True:
-chat_id, message_id = await delete_queue.get()
-try:
-await client.delete_messages(chat_id, message_id)
-except Exception:
-pass
-finally:
-delete_queue.task_done()
-await asyncio.sleep(2)
+    while True:
+        chat_id, message_id = await delete_queue.get()
+
+        try:
+            await client.delete_messages(chat_id, message_id)
+
+        except Exception:
+            pass
+
+        finally:
+            delete_queue.task_done()
+
+        await asyncio.sleep(2)
 
 app = Client(
 "userbot",
@@ -194,9 +198,12 @@ if unique_id:
             "msg_id": message.id  
         })
 
-if name == "main":
-emit_positive_health()
-loop = asyncio.get_event_loop()
-loop.run_until_complete(setup_database())
-loop.create_task(delete_worker(app))
-app.run()
+if __name__ == "__main__":
+    emit_positive_health()
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(setup_database())
+
+    loop.create_task(delete_worker(app))
+
+    app.run()
